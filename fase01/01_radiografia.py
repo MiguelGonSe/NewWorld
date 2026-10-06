@@ -12,3 +12,47 @@ if not DATASET.exists():
     )
 
 df = pd.read_json(DATASET, lines=True)
+
+required = [
+    'run_id', 'event_index', 'tick', 'type'
+]
+
+# VALIDACION 
+
+assert not df.empty, 'El dataset está vacío'
+assert all(column in df.columns for column in required), \
+    'Faltan columnas principales'
+assert not df.duplicated(['run_id', 'event_index']).any(), \
+    'Hay eventos duplicados'
+
+ordered = df.sort_values('event_index')
+assert ordered['tick'].is_monotonic_increasing, \
+    'Los ticks retroceden'
+
+print('\nVALIDACIÓN BÁSICA: OK')
+
+#NOMBRE
+nombre_archivo = Path(__file__).name
+print(nombre_archivo)
+
+filas, columnas = df.shape
+
+print('\nTAMAÑO')
+print('Eventos:', filas)
+print('Columnas:', columnas)
+
+print('\nNOMBRES DE COLUMNA')
+print(df.columns.tolist())
+
+print('type:', df['type'].iloc[0])
+
+print(df['type'].value_counts().iloc[0])
+
+print(df['type'].value_counts())
+
+print(df['run_id'].iloc[0])
+print(df['seed'].iloc[0])
+print(df['schema_version'].iloc[0])
+
+print('primer tick:', df['tick'].min())
+print('último tick:', df['tick'].max())
