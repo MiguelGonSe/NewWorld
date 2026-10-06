@@ -10,3 +10,7 @@
 | `run_id`, semilla y versión del esquema de la primera fila |20261005_182621_2099174182941333158_9efcc5b978e44b9ab52ec01820f5931e, 2099174182941333158, 2 |
 | Tick mínimo y tick máximo |0 , 279074 |
 | Resultado de las validaciones | VALIDACIÓN BÁSICA: OK |
+
+1. ¿Qué te permite afirmar el recuento sobre tu partida? El análisis de los eventos ¿Por qué el tipo más frecuente no tiene que ser el más importante? El tipo más frecuente es el que más se produce, no el más importante.
+2. ¿Por qué una celda vacía no significa necesariamente que el registro esté mal? Significa que no se ha producido ese evento, no que esté mal.
+3. ¿Qué sabes ahora del archivo y qué pregunta sobre tu partida necesitaría un análisis posterior? Conozco los eventos, los posibles que se pueden producir y sus respectivas cantidades. Y la pregunta sería : ¿Porqué se produce este evento más que el otro? / ¿Debido a que evento se produce el otro?

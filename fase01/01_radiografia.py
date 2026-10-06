@@ -37,22 +37,28 @@ print(nombre_archivo)
 
 filas, columnas = df.shape
 
-print('\nTAMAÑO')
+#FILAS/COLUMNAS
 print('Eventos:', filas)
 print('Columnas:', columnas)
 
+#Nombre de las columnas
 print('\nNOMBRES DE COLUMNA')
 print(df.columns.tolist())
 
+#TIPO PRIMERA FILA 
 print('type:', df['type'].iloc[0])
 
+#CANTIDAD PRIMERA FILA 
 print(df['type'].value_counts().iloc[0])
 
+#CANTIDAD DEL TIPO
 print(df['type'].value_counts())
 
+#PRIMERA FILA
 print(df['run_id'].iloc[0])
 print(df['seed'].iloc[0])
 print(df['schema_version'].iloc[0])
 
+#MAX Y MIN
 print('primer tick:', df['tick'].min())
 print('último tick:', df['tick'].max())
